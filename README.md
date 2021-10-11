@@ -1,4 +1,4 @@
-# HSE_ Recommender Systems Course
+# HSE Recommender Systems Course
 
 Materials and homework assignments for HSE recommender systems course
 
