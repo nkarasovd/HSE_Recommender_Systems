@@ -36,7 +36,6 @@ class WARPModel(PairwiseRankModel):
 
         for i in range(self.max_iterations):
             for user in self.unique_users:
-                user -= 1
                 pos_items, neg_items = self.users_interactions[user]
 
                 for pos_item in pos_items:

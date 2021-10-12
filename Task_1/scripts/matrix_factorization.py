@@ -35,8 +35,8 @@ class BaseModel(RecommendationModel, ABC):
         self.total_users = data_frame.user_id.max()
         self.total_items = data_frame.movie_id.max()
         # save unique ids for users and items
-        self.unique_users = data_frame.user_id.unique()
-        self.unique_items = data_frame.movie_id.unique()
+        self.unique_users = data_frame.user_id.unique() - 1
+        self.unique_items = data_frame.movie_id.unique() - 1
 
         self.latent_size = latent_size
         self.learning_rate = learning_rate
@@ -125,9 +125,9 @@ class PairwiseRankModel(BaseModel, ABC):
         users_interactions = {}
 
         for user in self.unique_users:
-            pos_items = self.numpy_data[self.numpy_data[:, 0] == user][:, 1]
+            pos_items = self.numpy_data[self.user_ids == user][:, 1]
             neg_items = np.array(list(set(self.unique_items) - set(pos_items))) - 1
-            users_interactions[user - 1] = (pos_items - 1, neg_items)
+            users_interactions[user] = (pos_items - 1, neg_items)
 
         return users_interactions
 
