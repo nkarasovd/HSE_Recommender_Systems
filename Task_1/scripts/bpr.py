@@ -21,8 +21,8 @@ class BPRModel(PairwiseRankModel):
 
                 for pos_item in pos_items:
                     neg_sample = np.random.choice(neg_items, size=self.sample_size, replace=False)
+                    r_u_pos = self.W[user, :] @ self.H[:, pos_item]
                     for neg_item in neg_sample:
-                        r_u_pos = self.W[user, :] @ self.H[:, pos_item]
                         r_u_neg = self.W[user, :] @ self.H[:, neg_item]
 
                         loss = 1.0 / (1.0 + np.exp(r_u_pos - r_u_neg))
