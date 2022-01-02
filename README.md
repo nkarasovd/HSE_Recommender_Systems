@@ -6,8 +6,7 @@ Materials and homework assignments for HSE recommender systems course
 
 
 #### Task 1. [Matrix Factorization](/Task_1)
- >  <ins><i>Задача:</i></ins> 
- >  1. Реализовать SVD разложение explicit данных, используя SGD.
- >  2. Реализовать матричное разложение implicit данных, используя ALS. 
- >  3. Реализовать матричное разложение implicit данных, используя BPR.
->   4. Реализовать матричное разложение implicit данных, используя WARP.
+ > <ins><i>Task:</i></ins> Implement SVD explicit data decomposition using SGD. Implement matrix decomposition of implicit data using ALS, BPR, WARP.
+
+#### Task 2. [Gradient Boosting Decision Trees](/Task_2)
+ > <ins><i>Task:</i></ins> Build a recommendation system using GBDT. Build non-classical embeddings using information about music tracks.
